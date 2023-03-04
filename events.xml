@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCityEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CityEvent Name="Kids Day Out" Description="A day of fun activities for kids" ImagePath="icon.png" Date="2023-04-15" Price="20" Category="Children"/>
+    <CityEvent Name="Football Match" Description="Watch the local team play against their rivals" ImagePath="icon.png" Date="2023-04-20" Price="35" Category="Sports"/>
+    <CityEvent Name="Art Exhibition" Description="View the latest works of local artists" ImagePath="icon.png" Date="2023-04-25" Price="10" Category="Culture"/>
+    <CityEvent Name="Historical Tour" Description="Learn about the city's history with a guided tour" ImagePath="icon.png" Date="2023-05-01" Price="15" Category="Sightseeing"/>
+    <CityEvent Name="Cooking Class" Description="Learn how to make delicious dishes from a professional chef" ImagePath="icon.png" Date="2023-05-05" Price="25" Category="Lifestyle"/>
+    <CityEvent Name="Nightclub Party" Description="Dance the night away at the city's hottest nightclub" ImagePath="icon.png" Date="2023-05-10" Price="30" Category="Parties"/>
+    <CityEvent Name="Photography Workshop" Description="Learn the basics of photography from an experienced photographer" ImagePath="icon.png" Date="2023-05-15" Price="20" Category="Education"/>
+    <CityEvent Name="Online Concert" Description="Enjoy a live concert from the comfort of your own home" ImagePath="icon.png" Date="2023-05-20" Price="15" Category="Online"/>
+    <CityEvent Name="Magic Show" Description="Be amazed by the skills of a professional magician" ImagePath="icon.png" Date="2023-05-25" Price="20" Category="Shows"/>
+</ArrayOfCityEvent>
