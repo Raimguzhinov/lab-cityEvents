@@ -4,18 +4,18 @@ namespace CityEvents.Models;
 
 public class CityEvent : AbstractNotifyPropertyChanged
 {
-    private string header = "";
-    private string description = "Описание отсутствует";
-    private string image = "";
-    private string date = "";
-    private string category;
-    private decimal price = 0;
+    private string _header = "";
+    private string _description = "";
+    private string _image = "";
+    private string _date = "";
+    private string _category = "";
+    private decimal _price;
 
-    private string checkStringLenght(string? str)
+    private static string CheckStringLenght(string? str)
     {
         if (str != "")
         {
-            if (str.Length > 135)
+            if (str!.Length > 135)
             {
                 int len = str.Length - 133;
                 str = str[..^len];
@@ -26,39 +26,39 @@ public class CityEvent : AbstractNotifyPropertyChanged
     }
     public string Header
     {
-        get => header;
-        set => SetAndRaise(ref header, value);
+        get => _header;
+        set => SetAndRaise(ref _header, value);
     }
 
     public string Description
     {
-        get => description;
+        get => _description;
         set {
-            SetAndRaise(ref description, checkStringLenght(value));
+            SetAndRaise(ref _description, CheckStringLenght(value));
         }
     }
 
     public string Image
     {
-        get => image;
-        set => SetAndRaise(ref image, value);
+        get => _image;
+        set => SetAndRaise(ref _image, value);
     }
 
     public string Date
     {
-        get => date;
-        set => SetAndRaise(ref date, value);
+        get => _date;
+        set => SetAndRaise(ref _date, value);
     }
 
     public string Category
     {
-        get => category;
-        set => SetAndRaise(ref category, value);
+        get => _category;
+        set => SetAndRaise(ref _category, value);
     }
 
     public decimal Price
     {
-        get => price;
-        set => SetAndRaise(ref price, value);
+        get => _price;
+        set => SetAndRaise(ref _price, value);
     }
 }
