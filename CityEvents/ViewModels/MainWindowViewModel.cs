@@ -1,46 +1,34 @@
 ﻿using System.Collections.ObjectModel;
-using Avalonia.Media;
+using System.Collections.Specialized;
 using CityEvents.Models;
-using ReactiveUI;
 
 namespace CityEvents.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ObservableCollection<EventCategory>? _category;
+        private readonly ObservableCollection<CityEvent> _cItems;
 
         public MainWindowViewModel()
         {
-            EventCategory = new ObservableCollection<EventCategory>();
-            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
-            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
-            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
-            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
-            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
-            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
-            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
-            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
-            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
-            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
-            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
-            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
-            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
-            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
-            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
-            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
-            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
-            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
-            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
-            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
+            CityEvent[] events = Serializer<CityEvent[]>.Load("../../../../events.xml");
+
+            _cItems = new ObservableCollection<CityEvent>(events);
+            _cItems.CollectionChanged += CItems_CollectionChanged!;
         }
 
-        public ObservableCollection<EventCategory>? EventCategory
+        private void CItems_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            get { return _category; }
-            set
+            if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove)
             {
-                this.RaiseAndSetIfChanged(ref _category, value);
+                // обновляем представление при добавлении/удалении элементов
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Replace)
+            {
+                // обновляем представление при замене элементов
             }
         }
+
+        public ObservableCollection<CityEvent> CItems => _cItems;
     }
+
 }
