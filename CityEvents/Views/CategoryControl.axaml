@@ -2,16 +2,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:CityEvents.ViewModels"
              xmlns:models="clr-namespace:CityEvents.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CityEvents.Views.CategoryControl">
+    <UserControl.Resources>
+        <vm:BitmapAssetValueConverter x:Key="VariableImage"/>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <vm:MainWindowViewModel/>
+    </UserControl.DataContext>
     
-    <ItemsControl Items="{Binding EventCategory}">
+    <ItemsControl Items="{Binding CItems}">
         <ItemsControl.ItemTemplate>
-            <DataTemplate DataType="{x:Type models:EventCategory}">
-                <Grid Margin="10" RowDefinitions="0.5*,0.5*">
-                    <Rectangle Height="100" Width="100" Fill="{Binding Color}"/>
-                    <TextBlock Grid.Row="1" Text="{Binding Name}"/>
+            <DataTemplate DataType="{x:Type models:CityEvent}">
+                <Grid Margin="20" RowDefinitions="0.5*,0.5*">
+                    <Image Height="150" Width="150" Source="{Binding Image, Converter={StaticResource VariableImage}}"/>
+                    <TextBlock Grid.Row="1" Text="{Binding Description}"/>
                 </Grid>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
