@@ -3,7 +3,8 @@
         xmlns:vm="using:CityEvents.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CityEvents.Models"
+        xmlns:local="clr-namespace:CityEvents.ViewModels"
+        xmlns:models="clr-namespace:CityEvents.Models"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="CityEvents.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -14,34 +15,62 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+    <Window.Resources>
+        <vm:BitmapAssetValueConverter x:Key="VariableImage"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
 
-    <TabControl Items="{Binding Tabs}" SelectedItem="{Binding CurrentTab}">
-        <TabControl.ItemTemplate>
-            <DataTemplate>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding Icon}" Width="16" Height="16" Margin="0,0,5,0" />
-                    <TextBlock Text="{Binding Name}" />
-                </StackPanel>
-            </DataTemplate>
-        </TabControl.ItemTemplate>
-        <TabControl.ContentTemplate>
-            <DataTemplate>
-                <WrapPanel>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Image Source="{Binding Content.ImageUrl}" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="{Binding Content.Title}" />
-                            <TextBlock Text="{Binding Content.Description}" />
-                        </StackPanel>
-                    </Grid>
-                </WrapPanel>
-            </DataTemplate>
-        </TabControl.ContentTemplate>
+    <TabControl>
+        <TabItem>
+            <TabItem.Header>
+                <Grid ColumnDefinitions="0.2*, *">
+                    <Image Source="/Assets/icon.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock Grid.Column="1" Text="Для детей" />
+                </Grid>
+            </TabItem.Header>
+            <ItemsControl Items="{Binding EventCategory}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:EventCategory}">
+                        <Grid Margin="10" RowDefinitions="0.5*,0.5*">
+                            <Rectangle Height="100" Width="100" Fill="{Binding Color}"/>
+                            <TextBlock Grid.Row="1" Text="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </TabItem>
+        
+        <TabItem>
+            <TabItem.Header>
+                <Grid ColumnDefinitions="0.2*, *">
+                    <Image Source="/Assets/icon.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock Grid.Column="1" Text="Развлечения" />
+                </Grid>
+            </TabItem.Header>
+            <ItemsControl Items="{Binding EventCategory}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:EventCategory}">
+                        <Grid Margin="10" RowDefinitions="0.5*,0.5*">
+                            <Rectangle Height="100" Width="100" Fill="{Binding Color}"/>
+                            <TextBlock Grid.Row="1" Text="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </TabItem>
+        
     </TabControl>
-
     
 </Window>

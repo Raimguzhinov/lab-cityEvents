@@ -1,79 +1,49 @@
-﻿using System.Collections.ObjectModel;
-using Avalonia.Media.Imaging;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Reactive.Linq;
+using Avalonia.Media;
 using CityEvents.Models;
+using DynamicData;
 using ReactiveUI;
 
-namespace CityEvents.ViewModels;
-
-public class MainWindowViewModel : ViewModelBase
+namespace CityEvents.ViewModels
 {
-    private ObservableCollection<TabViewModel> _tabs = null!;
-    private TabHeaderViewModel[] _headers = null!;
-    private ViewModelBase? _currentTab = null!;
-
-    public ObservableCollection<TabViewModel> Tabs
+    public class MainWindowViewModel : ViewModelBase
     {
-        get => _tabs;
-        set => this.RaiseAndSetIfChanged(ref _tabs, value);
-    }
-    
+        private ObservableCollection<EventCategory> category;
 
-    public TabHeaderViewModel[] Headers
-    {
-        get => _headers;
-        set => this.RaiseAndSetIfChanged(ref _headers, value);
-    }
-
-    public ViewModelBase? CurrentTab
-    {
-        get => _currentTab;
-        set => this.RaiseAndSetIfChanged(ref _currentTab, value);
-    }
-
-    public MainWindowViewModel()
-    {
-        Headers = new[]
+        public MainWindowViewModel()
         {
-            new TabHeaderViewModel
-            {
-                IconPath = "../../../Assets/icon.png",
-                Title = "Tab 1"
-            },
-            new TabHeaderViewModel
-            {
-                IconPath = "../../../Assets/icon.png",
-                Title = "Tab 2"
-            },
-            new TabHeaderViewModel
-            {
-                IconPath = "../../../Assets/icon.png",
-                Title = "Tab 3"
-            }
-        };
+            EventCategory = new ObservableCollection<EventCategory>();
+            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
+            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
+            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
+            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
+            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
+            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
+            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
+            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
+            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
+            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
+            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
+            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
+            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
+            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
+            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
+            EventCategory.Add(new EventCategory { Name = "RedName", Color = new SolidColorBrush(Colors.Red) });
+            EventCategory.Add(new EventCategory { Name = "GreenName", Color = new SolidColorBrush(Colors.Green) });
+            EventCategory.Add(new EventCategory { Name = "PurpleName", Color = new SolidColorBrush(Colors.Purple) });
+            EventCategory.Add(new EventCategory { Name = "BlueName", Color = new SolidColorBrush(Colors.Blue) });
+            EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
+        }
 
-        Tabs = new ObservableCollection<TabViewModel>
+        public ObservableCollection<EventCategory> EventCategory
         {
-            new TabViewModel
+            get { return category; }
+            set
             {
-                Icon = new Bitmap(Headers[0].IconPath),
-                Name = Headers[0].Title,
-                Content = new Tab1ViewModel()
-            },
-            new TabViewModel
-            {
-                Icon = new Bitmap(Headers[1].IconPath),
-                Name = Headers[1].Title,
-                Content = new Tab2ViewModel()
-            },
-            new TabViewModel
-            {
-                Icon = new Bitmap(Headers[2].IconPath),
-                Name = Headers[2].Title,
-                Content = new Tab3ViewModel()
+                this.RaiseAndSetIfChanged(ref category, value);
             }
-        };
-
-        CurrentTab = Tabs[0].Content;
+        }
     }
 }
-
