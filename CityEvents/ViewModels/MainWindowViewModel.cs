@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Reactive.Linq;
+﻿using System.Collections.ObjectModel;
 using Avalonia.Media;
 using CityEvents.Models;
-using DynamicData;
 using ReactiveUI;
 
 namespace CityEvents.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ObservableCollection<EventCategory> category;
+        private ObservableCollection<EventCategory>? _category;
 
         public MainWindowViewModel()
         {
@@ -37,12 +34,12 @@ namespace CityEvents.ViewModels
             EventCategory.Add(new EventCategory { Name = "OrangeName", Color = new SolidColorBrush(Colors.Orange) });
         }
 
-        public ObservableCollection<EventCategory> EventCategory
+        public ObservableCollection<EventCategory>? EventCategory
         {
-            get { return category; }
+            get { return _category; }
             set
             {
-                this.RaiseAndSetIfChanged(ref category, value);
+                this.RaiseAndSetIfChanged(ref _category, value);
             }
         }
     }
