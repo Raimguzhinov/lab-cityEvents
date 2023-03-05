@@ -2,17 +2,9 @@ namespace CityEvents.Models
 {
     public class EventCategory
     {
-        public readonly bool[] Categories = new bool[9];
+        public readonly bool[] Categories = { false, false, false, false, false, false, false, false, false };
 
-        public EventCategory() 
-        {
-            for (int i = 0; i < 9; i++)
-            {
-                Categories[i] = false;
-            }
-        }
-
-        public bool ForChildren
+        public bool Kid
         {
             get => Categories[0];
             set => Categories[0] = value;
