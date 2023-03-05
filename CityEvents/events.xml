@@ -6,15 +6,57 @@
         <Description>Cyberpunk</Description>
         <Image>Assets/icons/children.png</Image>
         <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
+        <Category>
+            <Categories>
+                <boolean>true</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>true</boolean>
+            </Categories>
+            <ForChildren>true</ForChildren>
+            <Sport>false</Sport>
+            <Culture>false</Culture>
+            <Excursions>false</Excursions>
+            <Lifestyle>false</Lifestyle>
+            <Party>false</Party>
+            <Education>false</Education>
+            <Online>false</Online>
+            <Show>true</Show>
+        </Category>
         <Price>1000</Price>
     </CityEvent>
     <CityEvent>
         <Header>Cinema</Header>
         <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
+        <Image>Assets/icons/culture.png</Image>
         <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
+        <Category>
+            <Categories>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>true</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>false</boolean>
+                <boolean>true</boolean>
+            </Categories>
+            <ForChildren>false</ForChildren>
+            <Sport>false</Sport>
+            <Culture>true</Culture>
+            <Excursions>false</Excursions>
+            <Lifestyle>false</Lifestyle>
+            <Party>false</Party>
+            <Education>false</Education>
+            <Online>false</Online>
+            <Show>true</Show>
+        </Category>
         <Price>1000</Price>
     </CityEvent>
     <CityEvent>
