@@ -13,19 +13,26 @@
         <vm:MainWindowViewModel/>
     </UserControl.DataContext>
     
-    <ItemsControl Items="{Binding CItems}">
-        <ItemsControl.ItemTemplate>
-            <DataTemplate DataType="{x:Type models:CityEvent}">
-                <Grid Margin="20" RowDefinitions="0.5*,0.5*">
-                    <Image Height="150" Width="150" Source="{Binding Image, Converter={StaticResource VariableImage}}"/>
-                    <TextBlock Grid.Row="1" Text="{Binding Description}"/>
-                </Grid>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <WrapPanel/>
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-    </ItemsControl>
+    <ScrollViewer>
+        <ItemsControl Items="{Binding Events}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type models:CityEvent}">
+                    <Grid Margin="20" RowDefinitions="0.5*,0.5*">
+                        <Image Height="150" Width="150" Source="{Binding Image, Converter={StaticResource VariableImage}}"/>
+                        <StackPanel Grid.Row="1">
+                            <TextBlock Text="{Binding Description}" />
+                            <TextBlock Text="{Binding Price}" />
+                            <TextBlock Text="{Binding Date}" />
+                            <TextBlock Text="{Binding Category}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </ScrollViewer>
 </UserControl>
