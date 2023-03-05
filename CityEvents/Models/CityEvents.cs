@@ -11,22 +11,7 @@ public class CityEvent : AbstractNotifyPropertyChanged
     private string _date;
     private EventCategory _category;
     private decimal _price;
-
-    private static string CheckStringLenght(string? str)
-    {
-        if (string.IsNullOrEmpty(str))
-        {
-            return string.Empty;
-        }
-        else if (str.Length > 135)
-        {
-            return str.Substring(0, 132) + "...";
-        }
-        else
-        {
-            return str;
-        }
-    }
+    private ushort _maxPrintLength = 135;
 
     public CityEvent()
     {
@@ -46,10 +31,14 @@ public class CityEvent : AbstractNotifyPropertyChanged
 
     public string Description
     {
-        get => _description;
-        set {
-            SetAndRaise(ref _description, CheckStringLenght(value));
+        get
+        {
+            if (_description.Length > _maxPrintLength)
+                return _description.Substring(0, _maxPrintLength) + "...";
+                
+            return _description;
         }
+        set => SetAndRaise(ref _description, value);
     }
 
     public string Image
