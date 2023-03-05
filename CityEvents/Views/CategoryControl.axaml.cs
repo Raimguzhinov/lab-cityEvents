@@ -1,28 +1,30 @@
+using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using CityEvents.Models;
 
-namespace CityEvents.Views;
-
-public partial class CategoryControl : UserControl
+namespace CityEvents.Views
 {
-    public CategoryControl()
+    public partial class CategoryControl : UserControl
     {
-        InitializeComponent();
-    }
+        public static readonly StyledProperty<ReadOnlyObservableCollection<CityEvent>> EventsProperty =
+            AvaloniaProperty.Register<CategoryControl, ReadOnlyObservableCollection<CityEvent>>(nameof(Events));
 
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
-    }
-    
-    public static readonly StyledProperty<EventCategory> EventCategoryProperty =
-        AvaloniaProperty.Register<CategoryControl, EventCategory>(nameof(EventCategory));
+        public ReadOnlyObservableCollection<CityEvent> Events
+        {
+            get => GetValue(EventsProperty);
+            set => SetValue(EventsProperty, value);
+        }
 
-    public EventCategory EventCategory
-    {
-        get { return GetValue(EventCategoryProperty); }
-        set { SetValue(EventCategoryProperty, value); }
+        public CategoryControl()
+        {
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
+        }
     }
 }
