@@ -18,13 +18,13 @@
         <ItemsControl Items="{Binding Path=Events, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:CategoryControl}}}" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type models:CityEvent}">
-                    <Grid Margin="20" RowDefinitions="0.5*,0.5*">
-                        <Image Height="150" Width="150" Source="{Binding Image, Converter={StaticResource VariableImage}}"/>
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="{Binding Header}" />
-                            <TextBlock Text="{Binding Description}" />
-                            <TextBlock Text="{Binding Price}" />
-                            <TextBlock Text="{Binding Date}" />
+                    <Grid Margin="20" HorizontalAlignment="Center" RowDefinitions="Auto, Auto" MinHeight="300" ColumnDefinitions="1*">
+                        <Image Height="250" Width="250" Stretch="UniformToFill" Source="{Binding Image, Converter={StaticResource VariableImage}}"/>
+                        <StackPanel Grid.Row="1" Margin="0,10,0,0">
+                            <TextBlock Text="{Binding Header}" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" FontSize="18"/>
+                            <TextBlock Text="{Binding Date}" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Bold" FontSize="14"/>
+                            <TextBlock Text="{Binding Description}" TextAlignment="Center" FontStyle="Italic" TextWrapping="Wrap" FontSize="12"/>
+                            <TextBlock Text="{Binding Price, StringFormat='{}{0:C}'}" TextAlignment="Center" FontWeight="Bold" FontSize="14"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
