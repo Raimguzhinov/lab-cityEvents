@@ -1,14 +1,15 @@
+using System;
 using DynamicData.Binding;
 
 namespace CityEvents.Models;
 
 public class CityEvent : AbstractNotifyPropertyChanged
 {
-    private string _header = "";
-    private string _description = "";
-    private string _image = "";
-    private string _date = "";
-    private string _category = "";
+    private string _header;
+    private string _description;
+    private string _image;
+    private string _date;
+    private EventCategory _category;
     private decimal _price;
 
     private static string CheckStringLenght(string? str)
@@ -24,6 +25,17 @@ public class CityEvent : AbstractNotifyPropertyChanged
         }
         return str;
     }
+
+    public CityEvent()
+    {
+        _header = string.Empty;
+        _description = string.Empty;
+        _image = string.Empty;
+        _date = string.Empty;
+        _category = null!;
+        _price = Decimal.Zero;
+    }
+    
     public string Header
     {
         get => _header;
@@ -50,7 +62,7 @@ public class CityEvent : AbstractNotifyPropertyChanged
         set => SetAndRaise(ref _date, value);
     }
 
-    public string Category
+    public EventCategory Category
     {
         get => _category;
         set => SetAndRaise(ref _category, value);
