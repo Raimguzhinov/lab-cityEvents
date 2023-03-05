@@ -4,7 +4,7 @@
     <CityEvent>
         <Header>Cinema</Header>
         <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
+        <Image>Assets/icons/children.png</Image>
         <Date>01.01.2023</Date>
         <Category>Категория мероприятия</Category>
         <Price>1000</Price>
