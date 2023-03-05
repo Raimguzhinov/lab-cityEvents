@@ -25,65 +25,38 @@ namespace CityEvents.ViewModels
 
             SourceList<CityEvent> sourceList = new();
 
-            foreach (CityEvent c in events)
+            foreach (var e in events)
             {
-                sourceList.Add(c);
+                sourceList.Add(e);
             }
 
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
-                .Filter(x => x.Category.ForChildren)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems1)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Kid)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems1).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Sport)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems2)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems2).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Culture)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems3)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems3).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Excursions)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems4)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems4).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Lifestyle)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems5)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems5).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Party)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems6)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems6).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Education)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems7)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems7).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Online)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems8)
-                .Subscribe();
-            sourceList.Connect()
-                .AutoRefresh(x => x.Category)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems8).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
                 .Filter(x => x.Category.Show)
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Bind(out _cItems9)
-                .Subscribe();
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems9).Subscribe();
         }
 
         public ReadOnlyObservableCollection<CityEvent> CItems1 => _cItems1;
