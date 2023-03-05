@@ -14,16 +14,18 @@ public class CityEvent : AbstractNotifyPropertyChanged
 
     private static string CheckStringLenght(string? str)
     {
-        if (str != "")
+        if (string.IsNullOrEmpty(str))
         {
-            if (str!.Length > 135)
-            {
-                int len = str.Length - 133;
-                str = str[..^len];
-                str += "...";
-            }
+            return string.Empty;
         }
-        return str;
+        else if (str.Length > 135)
+        {
+            return str.Substring(0, 132) + "...";
+        }
+        else
+        {
+            return str;
+        }
     }
 
     public CityEvent()
