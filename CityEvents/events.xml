@@ -1,391 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCityEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>Assets/icons/children.png</Image>
-        <Date>01.01.2023</Date>
+        <Header>Мастер-класс по живописи</Header>
+        <Description>Мы приглашаем вас создать 
+            картину к 8 марта, под руководством 
+            художника Академии творчества Новосибирска!</Description>
+        <Image>Assets/img/risunki.jpg</Image>
+        <Date>5 марта 15:00</Date>
         <Category>
-            <Categories>
-                <boolean>true</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>true</boolean>
-            </Categories>
-            <ForChildren>true</ForChildren>
-            <Sport>false</Sport>
-            <Culture>false</Culture>
-            <Excursions>false</Excursions>
-            <Lifestyle>false</Lifestyle>
-            <Party>false</Party>
-            <Education>false</Education>
-            <Online>false</Online>
-            <Show>true</Show>
-        </Category>
-        <Price>1000</Price>
-    </CityEvent>
-    <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>Assets/icons/culture.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>
-            <Categories>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>true</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>false</boolean>
-                <boolean>true</boolean>
-            </Categories>
-            <ForChildren>false</ForChildren>
-            <Sport>false</Sport>
             <Culture>true</Culture>
-            <Excursions>false</Excursions>
-            <Lifestyle>false</Lifestyle>
-            <Party>false</Party>
-            <Education>false</Education>
-            <Online>false</Online>
-            <Show>true</Show>
+        </Category>
+    </CityEvent>
+    <CityEvent>
+        <Header>Сказка о потерянном времени</Header>
+        <Description>Сказка о "потерянном времени"
+            Евгения Шварца знакома каждому с детства,
+            её любят дети и родители, бабушки и дедушки.</Description>
+        <Image>Assets/img/skazka.jpg</Image>
+        <Date>19 марта, воскресенье, 12:00</Date>
+        <Category>
+            <Culture>true</Culture>
+            <Kid>true</Kid>
+        </Category>
+        <Price>350</Price>
+    </CityEvent>
+    <CityEvent>
+        <Header>Влюбиться в Новосибирск</Header>
+        <Description>Приглашаю вас на прогулку по Новосибирску!
+            Мы с вами увидим главные достопримечательности, 
+            прогуляемся по центру и поговорим о том, 
+            как наш прекрасный город стал столицей Сибири. 
+            Я расскажу вам удивительные факты из истории, 
+            городские легенды и случаи из жизни местных, 
+            так что у вас не будет шансов не влюбиться в Новосибирск!</Description>
+        <Image>Assets/img/excurs.jpg</Image>
+        <Date>10 марта 16:00</Date>
+        <Category>
+            <Excursions>true</Excursions>
+        </Category>
+        <Price>6000</Price>
+    </CityEvent>
+    <CityEvent>
+        <Header>Йога на набережной</Header>
+        <Description>Приглашаем вас помедетировать вместе с нами</Description>
+        <Image>Assets/img/yoga.jpg</Image>
+        <Date>1 июня 16:00</Date>
+        <Category>
+            <Lifestyle>true</Lifestyle>
         </Category>
         <Price>1000</Price>
     </CityEvent>
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
-        <Price>1000</Price>
+        <Header>Чаепитие в парке</Header>
+        <Description>Приглашаем вас пить чай вместе с нами</Description>
+        <Image>Assets/img/tea.jpeg</Image>
+        <Date>1 апреля 16:00</Date>
+        <Category>
+            <Lifestyle>true</Lifestyle>
+        </Category>
+        <Price>200</Price>
     </CityEvent>
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
-        <Price>1000</Price>
+        <Header>Studance</Header>
+        <Description>В среду набираем обороты
+            на вечеринке "Studance"
+            – зажигаем под любимые бэнгеры 
+            под коктейль-другой</Description>
+        <Image>Assets/img/dance.jpg</Image>
+        <Date>Каждую среду</Date>
+        <Category>
+            <Party>true</Party>
+        </Category>
+        <Price>2000</Price>
     </CityEvent>
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
-        <Price>1000</Price>
+        <Header>В центре внимания</Header>
+        <Description>"В центре внимания"
+            яркая уикенд-туса с уникальными 
+            диджей-сетами, кайфовой атмосферой
+            любимого бара и вкусными коктейлями
+            из нашего меню</Description>
+        <Image>Assets/img/bar.jpg</Image>
+        <Date>Каждую cубботу</Date>
+        <Category>
+            <Party>true</Party>
+        </Category>
+        <Price>2500</Price>
     </CityEvent>
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
-        <Price>1000</Price>
+        <Header>Древний Египет</Header>
+        <Description>В египетском зале представлена
+            подлинная храмовая статуя
+            – ушебти – вместилище света. 
+            Что означает её название и как она использовалась,
+            вы узнаете из экскурсии по египетскому залу. 
+            А также узнаете, что стоит за древними
+            мифами и легендами Египта.</Description>
+        <Image>Assets/img/eg.jpg</Image>
+        <Date>10 марта</Date>
+        <Category>
+            <Education>true</Education>
+            <Excursions>true</Excursions>
+        </Category>
+        <Price>1500</Price>
     </CityEvent>
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
-        <Price>1000</Price>
+        <Header>Древняя Америка</Header>
+        <Description>В зале древней Америки
+            представлены культуры инков,
+            ацтеков и майя, а также солнечные
+            традиции североамериканских племён.
+            Перед посетителями предстанут
+            скульптурные изображения главных солнечных
+            богов и обсидиановые ножи с их ликами в навершиях.</Description>
+        <Image>Assets/img/am.jpg</Image>
+        <Date>12 марта</Date>
+        <Category>
+            <Education>true</Education>
+            <Excursions>true</Excursions>
+        </Category>
+        <Price>1500</Price>
     </CityEvent>
     <CityEvent>
-        <Header>Cinema</Header>
-        <Description>Cyberpunk</Description>
-        <Image>123.png</Image>
-        <Date>01.01.2023</Date>
-        <Category>Категория мероприятия</Category>
-        <Price>1000</Price>
+        <Header>Бесплатный курс по разработке</Header>
+        <Description>Обучение бесплатное.
+            Курс подойдет тем, кто имеет навыки
+            программирования на любом языке.</Description>
+        <Image>Assets/img/kurs.jpg</Image>
+        <Date>13 марта</Date>
+        <Category>
+            <Online>true</Online>
+        </Category>
+        <Price>1500</Price>
+    </CityEvent>
+    <CityEvent>
+        <Header>Цикл лекций для детей
+            «Мифы и легенды»</Header>
+        <Description>Формат занятий — «рассказ по картинкам».
+            Ведущий — кандидат филологических наук
+            Николай Гладких — не только рассказывает миф 
+            или историю, но одновременно показывает, 
+            как этот сюжет или персонаж
+            отразился в истории культуры.</Description>
+        <Image>Assets/img/online.jpg</Image>
+        <Date>17 марта</Date>
+        <Category>
+            <Online>true</Online>
+            <Kid>true</Kid>
+        </Category>
+        <Price>15000</Price>
+    </CityEvent>
+    <CityEvent>
+        <Header>Сергей Орлов
+            «Установка «Быть»</Header>
+        <Description>Лучший стендап в России</Description>
+        <Image>Assets/img/stendap.jpg</Image>
+        <Date>25 апреля</Date>
+        <Category>
+            <Show>true</Show>
+        </Category>
+        <Price>1500</Price>
+    </CityEvent>
+    <CityEvent>
+        <Header>Илья Соболев</Header>
+        <Description>Оригинальный стендап</Description>
+        <Image>Assets/img/stendap2.jpg</Image>
+        <Date>29 апреля</Date>
+        <Category>
+            <Show>true</Show>
+        </Category>
+        <Price>15000</Price>
+    </CityEvent>
+    <CityEvent>
+        <Header>Соревнования по шашкам
+            СибГУТИ</Header>
+        <Description>Жесточайшие и увлекательные партии по
+            шашкам в лучшем университете Новосибирска</Description>
+        <Image>Assets/img/chess.jpg</Image>
+        <Date>2 апреля</Date>
+        <Category>
+            <Sport>true</Sport>
+        </Category>
+    </CityEvent>
+    <CityEvent>
+        <Header>Соревнования по бадминтону
+            СибГУТИ</Header>
+        <Description>Лучший вид спорта в лучшем университете,
+            что может быть лучше?</Description>
+        <Image>Assets/img/badm.jpg</Image>
+        <Date>3 апреля</Date>
+        <Category>
+            <Sport>true</Sport>
+        </Category>
     </CityEvent>
 </ArrayOfCityEvent>
-
-
-
-
-    
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-
-
-    
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-
-    
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-
-
-    
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-
-    
-        
-    
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-
-
-    
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-
-    
-    
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-
-    
-    
-        
-        
-    
-        
-    
-    
-    
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-
-
-    
-        
-    
-        
-        
-        
