@@ -27,7 +27,7 @@
                     <TextBlock Grid.Column="1" Text="для детей" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems1}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -36,7 +36,7 @@
                     <TextBlock Grid.Column="1" Text="спорт" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems2}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -45,7 +45,7 @@
                     <TextBlock Grid.Column="1" Text="культура" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems3}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -54,7 +54,7 @@
                     <TextBlock Grid.Column="1" Text="экскурсии" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems4}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -63,7 +63,7 @@
                     <TextBlock Grid.Column="1" Text="образ жизни" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems5}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -72,7 +72,7 @@
                     <TextBlock Grid.Column="1" Text="вечеринки" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems6}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -81,7 +81,7 @@
                     <TextBlock Grid.Column="1" Text="образование" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems7}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -90,7 +90,7 @@
                     <TextBlock Grid.Column="1" Text="онлайн" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems8}"/>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -99,7 +99,7 @@
                     <TextBlock Grid.Column="1" Text="шоу" FontSize="18"/>
                 </Grid>
             </TabItem.Header>
-            <views:CategoryControl/>
+            <views:CategoryControl Events="{Binding CItems9}"/>
         </TabItem>
     </TabControl>
     
